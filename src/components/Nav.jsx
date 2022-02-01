@@ -4,21 +4,24 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../App.css"
 
-export default function Nav() {
+export default function Nav({ searchValue, setSearchValue }) {
 
     const navigate = useNavigate()
 
     return <div className='container'>
         <div className='wrapper'>
             <div className='left'>
-                <h1 onClick={() => navigate('/home')} className='logo'>FAUVE</h1>
+                <h1 onClick={() => navigate('/home')} className='logo'>FAUVE.</h1>
 
 
             </div>
             <div className='center'>
                 <div className='search-container'>
                     <Search className='search-icon' />
-                    <input placeholder='Find your fauve...' className='search-input' />
+                    <input value={searchValue} placeholder='Find your fauve...' className='search-input'
+                        onChange={(e) => {
+                            setSearchValue(e.target.value)
+                        }} />
                 </div>
             </div>
             <div className='right'>
