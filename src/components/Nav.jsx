@@ -4,7 +4,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../App.css"
 
-export default function Nav({ searchValue, setSearchValue }) {
+export default function Nav({ searchValue, setSearchValue, cartList }) {
 
     const navigate = useNavigate()
 
@@ -28,8 +28,10 @@ export default function Nav({ searchValue, setSearchValue }) {
                 <div className='menu-item'>Register</div>
                 <div className='menu-item'>Log in</div>
                 <div className='menu-item'>
-                    <Badge badgeContent={0} color='primary'>
-                        <ShoppingCartOutlined />
+                    <Badge badgeContent={cartList.length} color='error'>
+                        <ShoppingCartOutlined onClick={() => {
+                            navigate("/cart")
+                        }} />
                     </Badge>
                 </div>
             </div>

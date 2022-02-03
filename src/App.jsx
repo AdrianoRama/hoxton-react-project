@@ -1,21 +1,22 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Home from './pages/Home'
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Products from './components/Products';
 import Nav from './components/Nav';
 import SingleProduct from './pages/SingleProduct';
+import Cart from './pages/Cart';
+import Categories from './components/Categories';
 
 function App() {
   const [categories, setCategories] = useState([])
   const [filteredCategories, setFilteredCategories] = useState(categories)
   const [searchValue, setSearchValue] = useState('')
   const [products, setProducts] = useState([])
-  const [womanList, setWomanList] = useState([])
-  const [filteredWomanList, setFilteredWomanList] = useState(womanList)
-  const [manList, setManList] = useState([])
-  const [filteredManList, setFilteredManList] = useState(manList)
+  const [newList, setNewList] = useState([])
+  const [filteredWomanList, setFilteredWomanList] = useState(newList)
+  const [filteredManList, setFilteredManList] = useState(newList)
   const [clickedProduct, setClickedProduct] = useState()
+  const [cartList, setCartList] = useState([])
 
   function searchClothes() {
     const pathName = window.location.pathname
@@ -25,11 +26,11 @@ function App() {
       setFilteredCategories(newCategories)
     }
     else if (pathName === "/woman") {
-      const newWomanList = womanList.filter(woman => woman.title.toLowerCase().includes(searchValue.toLowerCase()))
+      const newWomanList = newList.filter(woman => woman.title.includes(searchValue))
       setFilteredWomanList(newWomanList)
     }
     else if (pathName === "/man") {
-      const newManList = manList.filter(man => man.title.toLowerCase().includes(searchValue.toLowerCase()))
+      const newManList = newList.filter(man => man.title.includes(searchValue))
       setFilteredManList(newManList)
     }
   }
@@ -51,23 +52,40 @@ function App() {
 
   function getWomanClothes() {
     let woman = products.filter(product => product.Woman === true)
-    setWomanList(woman)
+    setNewList(woman)
+    setFilteredWomanList(woman)
   }
 
   function getManClothes() {
     let man = products.filter(product => product.Woman === false)
-    setManList(man)
+    setNewList(man)
+    setFilteredManList(man)
+  }
+
+  function addAmount(clickedProduct) {
+    const updatedProducts = [...products]
+    const match = updatedProducts.find(match => match.amount === clickedProduct.amount)
+    match.amount++
+    setProducts(updatedProducts)
+  }
+
+  function minusAmount(clickedProduct) {
+    const updatedProducts = [...products]
+    const match = updatedProducts.find(match => match.amount === clickedProduct.amount)
+    if (match.amount > 0) { match.amount-- }
+    setProducts(updatedProducts)
   }
 
   return (<div className="App">
-    <Nav searchValue={searchValue} setSearchValue={setSearchValue} />
+    <Nav searchValue={searchValue} setSearchValue={setSearchValue} cartList={cartList} />
     {<Routes>
       <Route index element={<Navigate replace to='/home' />} />
-      <Route path="/home" element={<Home categories={filteredCategories} getWomanClothes={getWomanClothes} getManClothes={getManClothes} />} />
+      <Route path="/home" element={<Categories categories={filteredCategories} getWomanClothes={getWomanClothes} getManClothes={getManClothes} />} />
       <Route path="/woman" element={<Products products={filteredWomanList} setClickedProduct={setClickedProduct} />} />
-      <Route path="/woman/:id" element={<SingleProduct clickedProduct={clickedProduct} />} />
+      <Route path="/woman/:id" element={<SingleProduct addAmount={addAmount} cartList={cartList} setCartList={setCartList} clickedProduct={clickedProduct} />} />
       <Route path="/man" element={<Products products={filteredManList} setClickedProduct={setClickedProduct} />} />
-      <Route path="/man/:id" element={<SingleProduct clickedProduct={clickedProduct} />} />
+      <Route path="/man/:id" element={<SingleProduct addAmount={addAmount} cartList={cartList} setCartList={setCartList} clickedProduct={clickedProduct} />} />
+      <Route path="/cart" element={<Cart cartList={cartList} addAmount={addAmount} minusAmount={minusAmount} clickedProduct={clickedProduct} />} />
     </Routes>}
 
   </div>

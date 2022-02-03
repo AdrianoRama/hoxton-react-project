@@ -19,7 +19,8 @@
             "price": 9.99,
             "title": "Seamless Boyshort Panties",
             "description": "A pair of seamless knit boyshort panties featuring an elasticized high-rise waist",
-            "material": "93% nylon, 7% spandex"
+            "material": "93% nylon, 7% spandex",
+            "amount": 0
         },
         {
             "id": 2,
@@ -28,7 +29,8 @@
             "price": 39.99,
             "title": "Heathered Three-Piece Sleep Set",
             "description": "A three-piece heathered knit set featuring a duster cardigan with an open front, long sleeves, and removable sash belt, cami with round neckline and adjustable straps, and a matching pair of wants with elasticized drawstring waist and a wide leg.",
-            "material": "93% nylon, 3% spandex"
+            "material": "93% nylon, 3% spandex",
+            "amount": 0
         },
         {
             "id": 3,
@@ -37,7 +39,8 @@
             "price": 24.99,
             "title": "Tiered Ruffle Mini Dress",
             "description": "A woven mini dress featuring a shift silhouette, tiered ruffle trim, square neckline and back, and shoulder straps.",
-            "material": "100% rayon"
+            "material": "100% rayon",
+            "amount": 1
         },
         {
             "id": 4,
@@ -46,7 +49,8 @@
             "price": 14.99,
             "title": "Active Camo Print Leggings",
             "description": "An athletic pair of leggings featuring an allover camo print, high rise, and a banded waist.",
-            "material": "88% cotton, 12% spandex"
+            "material": "88% cotton, 12% spandex",
+            "amount": 0
         },
         {
             "id": 5,
@@ -55,7 +59,8 @@
             "price": 54.99,
             "title": "Tie-Back Bodycon Dress",
             "description": "A knit mini dress featuring a bodycon silhouette, an allover striped pattern, straight-cut neckline, self-tie back, cami straps, and a back cutout.",
-            "material": "74% rayon, 22% cotton, 4% spandex"
+            "material": "74% rayon, 22% cotton, 4% spandex",
+            "amount": 0
         },
         {
             "id": 6,
@@ -64,7 +69,8 @@
             "price": 11.99,
             "title": "Ringer Dolphin Shorts",
             "description": "A pair of knit ringer shorts featuring contrast trim, elasticized waistband, and a dolphin hem.",
-            "material": "2% cotton, 8% spandex"
+            "material": "2% cotton, 8% spandex",
+            "amount": 0
         },
         {
             "id": 7,
@@ -73,7 +79,8 @@
             "price": 9.99,
             "title": "Active Camo Print Shorts",
             "description": "An athletic pair of knit shorts featuring an allover camo print, high rise, and an elasticized waistband.",
-            "material": "95% cotton, 5% spandex"
+            "material": "95% cotton, 5% spandex",
+            "amount": 0
         },
         {
             "id": 8,
@@ -82,7 +89,8 @@
             "price": 14.99,
             "title": "Sweater Tank Top",
             "description": "A ribbed sweater-knit tank top featuring a V-neckline and back and a vented hem.",
-            "material": "51% acrylic, 49% rayon"
+            "material": "51% acrylic, 49% rayon",
+            "amount": 0
         },
         {
             "id": 9,
@@ -91,7 +99,8 @@
             "price": 9.99,
             "title": "Drawstring Swim Trunks",
             "description": "A pair of woven swim trunks featuring a drawstring waist, slanted front pockets, single back patch pocket with hook-and-loop closure, and a mesh knit lining.",
-            "material": "100% polyester"
+            "material": "100% polyester",
+            "amount": 0
         },
         {
             "id": 10,
@@ -100,7 +109,8 @@
             "price": 19.99,
             "title": "Cuban Collar Shirt",
             "description": "A soft woven shirt featuring a Cuban collar, short sleeves, and button-down front.",
-            "material": "100% rayon"
+            "material": "100% rayon",
+            "amount": 0
         },
         {
             "id": 11,
@@ -109,7 +119,8 @@
             "price": 39.99,
             "title": "Anxiety Relief Graphic Tee",
             "description": "A knit graphic tee featuring 'Anxiety Relief' text on the front and back with 'Legal Tour' and list of states, bleached wash, contrast crew neck, and short sleeves.",
-            "material": "100% cotton"
+            "material": "100% cotton",
+            "amount": 0
         },
         {
             "id": 12,
@@ -118,7 +129,8 @@
             "price": 22.99,
             "title": "Classic Fit Sailboat Print Shirt",
             "description": "Cut and sewn for a classic fit, this soft woven shirt features a sailboat print, Cuban collar, short sleeves, and a button-down front.",
-            "material": "100% rayon"
+            "material": "100% rayon",
+            "amount": 0
         },
         {
             "id": 13,
@@ -127,7 +139,8 @@
             "price": 29.99,
             "title": "Toggle-Drawstring Hooded Anorak",
             "description": "A windbreaker woven anorak featuring a colorblock design, half-zip front, toggle drawstring hood and hem, long sleeves with elasticized trim, and a front flap pocket.",
-            "material": "100% polyester"
+            "material": "100% polyester",
+            "amount": 0
         },
         {
             "id": 14,
@@ -136,7 +149,8 @@
             "price": 22.99,
             "title": "Classic Fit Worldwide Shirt",
             "description": "Cut and sewn for a classic fit, this soft woven shirt features a globe chest patch graphic and 'Worldwide' text across the back, Cuban collar, short sleeves, and button-down front.",
-            "material": "100% rayon"
+            "material": "100% rayon",
+            "amount": 0
         },
         {
             "id": 15,
@@ -145,7 +159,8 @@
             "price": 29.99,
             "title": "Sleigh All Day Graphic Knit Sweater",
             "description": "An intarsia knit sweater featuring 'I Sleigh All Day' text graphic, a crew neck, long sleeves, and ribbed trim.",
-            "material": "100% acrylic"
+            "material": "100% acrylic",
+            "amount": 0
         }
     ]
 }
