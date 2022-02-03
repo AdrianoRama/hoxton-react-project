@@ -26,15 +26,16 @@ function CartProduct({ product, addAmount, minusAmount }) {
     </div>
 }
 
-export default function CartList({ cartList, addAmount, minusAmount }) {
+export default function CartList({ cartList, addAmount, minusAmount, setCartList }) {
 
 
 
     return cartList.map(product => {
         if (product.amount === 0) {
-            // const index = cartList.indexOf(product)
-            // cartList.splice(index, 1)
-            // console.log(cartList)
+            const index = cartList.indexOf(product)
+            cartList.splice(index, 1)
+            setCartList([...cartList])
+            console.log(cartList)
         }
 
         else return <CartProduct key={product.id} product={product} addAmount={addAmount} minusAmount={minusAmount} />

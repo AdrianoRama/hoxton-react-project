@@ -1,6 +1,8 @@
+import { Add, Remove } from "@material-ui/icons";
 
 
 export default function SingleProduct({ clickedProduct, cartList, setCartList }) {
+
     return <div className="single-product-cont">
         <div className="single-product-wrapper">
             <div className="single-product-imageCont">

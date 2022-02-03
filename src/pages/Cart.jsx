@@ -3,7 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import CartList from '../components/CartList';
 
-export default function Cart({ cartList, clickedProduct, addAmount, minusAmount }) {
+export default function Cart({ cartList, clickedProduct, addAmount, minusAmount, setCartList }) {
 
     const navigate = useNavigate()
 
@@ -33,7 +33,7 @@ export default function Cart({ cartList, clickedProduct, addAmount, minusAmount 
             </div>
             <div className="cart-bottom">
                 <div className="cart-info">
-                    <CartList cartList={cartList} addAmount={addAmount} minusAmount={minusAmount} />
+                    <CartList setCartList={setCartList} cartList={cartList} addAmount={addAmount} minusAmount={minusAmount} />
                 </div>
                 <div className="cart-summary">
                     <h1 className='summary-title'>ORDER SUMMARY</h1>

@@ -85,7 +85,7 @@ function App() {
       <Route path="/woman/:id" element={<SingleProduct cartList={cartList} setCartList={setCartList} clickedProduct={clickedProduct} />} />
       <Route path="/man" element={<Products products={filteredManList} setClickedProduct={setClickedProduct} />} />
       <Route path="/man/:id" element={<SingleProduct cartList={cartList} setCartList={setCartList} clickedProduct={clickedProduct} />} />
-      <Route path="/cart" element={<Cart cartList={cartList} addAmount={addAmount} minusAmount={minusAmount} clickedProduct={clickedProduct} />} />
+      <Route path="/cart" element={<Cart setCartList={setCartList} cartList={cartList} addAmount={addAmount} minusAmount={minusAmount} clickedProduct={clickedProduct} />} />
       <Route path="/cart/fin" element={<Fin />} />
     </Routes>}
 
