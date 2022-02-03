@@ -26,14 +26,14 @@ export default function Cart({ cartList, clickedProduct, addAmount, minusAmount 
                     navigate("/home")
                 }}>CONTINUE SHOPPING</button>
                 <div className="top-texts">
-                    <span className='top-text'>Shopping bag({cartList.length})</span>
-                    <span className='top-text'>Your wishlist(0)</span>
+                    <span className='top-text'>Shopping bag(<span className='bagNumber'>{cartList.length}</span>)</span>
+                    <span className='top-text'>Your wishlist(<span className='bagNumber'>0</span>)</span>
                 </div>
-                <button className='checkout-btn'>PROCEED TO CHECKOUT</button>
+                <button className='checkout-btn' onClick={() => navigate("fin")}>PROCEED TO CHECKOUT</button>
             </div>
             <div className="cart-bottom">
                 <div className="cart-info">
-                    <CartList cartList={cartList} clickedProduct={clickedProduct} addAmount={addAmount} minusAmount={minusAmount} />
+                    <CartList cartList={cartList} addAmount={addAmount} minusAmount={minusAmount} />
                 </div>
                 <div className="cart-summary">
                     <h1 className='summary-title'>ORDER SUMMARY</h1>
@@ -41,7 +41,7 @@ export default function Cart({ cartList, clickedProduct, addAmount, minusAmount 
                         <span className="total-item-text">Total</span>
                         <span className="total-item-price">$ {total().toFixed(2)}</span>
                     </div>
-                    <button className='summary-btn'>CHECKOUT NOW</button>
+                    <button className='summary-btn' onClick={() => navigate("fin")}>CHECKOUT NOW</button>
                 </div>
             </div>
         </div>

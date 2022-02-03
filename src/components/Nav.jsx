@@ -28,7 +28,7 @@ export default function Nav({ searchValue, setSearchValue, cartList }) {
                 <div className='menu-item'>Register</div>
                 <div className='menu-item'>Log in</div>
                 <div className='menu-item'>
-                    <Badge badgeContent={cartList.length} color='error'>
+                    <Badge badgeContent={cartList.length} color='secondary'>
                         <ShoppingCartOutlined onClick={() => {
                             navigate("/cart")
                         }} />

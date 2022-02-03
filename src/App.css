@@ -71,6 +71,10 @@
   cursor: pointer;
   margin-left: 25px;
 }
+
+.bagNumber{
+  color: rgb(244 67 54);
+}
 /*  */
 
 /* Categories */
@@ -425,3 +429,16 @@ padding: 100px 50px;
 }
 
 /*  */
+
+/* fin */
+
+.fin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fin img{
+  width: 100%;
+  height: 100%;
+}

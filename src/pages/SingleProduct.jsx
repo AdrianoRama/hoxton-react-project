@@ -1,6 +1,6 @@
 
 
-export default function SingleProduct({ clickedProduct, cartList, setCartList, addAmount }) {
+export default function SingleProduct({ clickedProduct, cartList, setCartList }) {
     return <div className="single-product-cont">
         <div className="single-product-wrapper">
             <div className="single-product-imageCont">
@@ -13,8 +13,13 @@ export default function SingleProduct({ clickedProduct, cartList, setCartList, a
                 <span className="single-product-price">$ {clickedProduct.price}</span>
                 <div className="single-product-addCont">
                     <button className="single-product-addToCart" onClick={() => {
-                        setCartList([...cartList, clickedProduct])
-                        addAmount(clickedProduct)
+                        if (cartList.includes(clickedProduct)) {
+                            return
+                        }
+                        else {
+                            setCartList([...cartList, clickedProduct])
+                            clickedProduct.amount = 1
+                        }
                         console.log(clickedProduct.amount)
                     }}>ADD TO CART</button>
                 </div>

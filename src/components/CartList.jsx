@@ -3,7 +3,7 @@ import React from 'react';
 import "../App"
 
 
-function CartProduct({ product, clickedProduct, addAmount, minusAmount }) {
+function CartProduct({ product, addAmount, minusAmount }) {
     return <div className='cartProduct'>
         <div className="show-item-correct">
             <div className="product-details">
@@ -15,9 +15,9 @@ function CartProduct({ product, clickedProduct, addAmount, minusAmount }) {
             <div className="price-details">
                 <div className='price-detail'>
                     <div className="amount-cont">
-                        <Remove className='addAndRemove' onClick={() => minusAmount(clickedProduct)} />
+                        <Remove className='addAndRemove' onClick={() => minusAmount(product)} />
                         <div className='product-amount'>{product.amount}</div>
-                        <Add className='addAndRemove' onClick={() => addAmount(clickedProduct)} />
+                        <Add className='addAndRemove' onClick={() => addAmount(product)} />
                     </div>
                     <div className='cart-prod-price'>$ {(product.price * product.amount).toFixed(2)}</div>
                 </div>
@@ -26,17 +26,18 @@ function CartProduct({ product, clickedProduct, addAmount, minusAmount }) {
     </div>
 }
 
-export default function CartList({ cartList, clickedProduct, addAmount, minusAmount }) {
+export default function CartList({ cartList, addAmount, minusAmount }) {
 
-    // const filteredItem = cartList.filter(product => {
-    //     return product.amount > 0
-    // })
 
-    // console.log(filteredItem)
 
     return cartList.map(product => {
+        if (product.amount === 0) {
+            // const index = cartList.indexOf(product)
+            // cartList.splice(index, 1)
+            // console.log(cartList)
+        }
 
-        return <CartProduct key={product.id} product={product} clickedProduct={clickedProduct} addAmount={addAmount} minusAmount={minusAmount} />
+        else return <CartProduct key={product.id} product={product} addAmount={addAmount} minusAmount={minusAmount} />
 
     })
 }

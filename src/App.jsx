@@ -6,6 +6,7 @@ import Nav from './components/Nav';
 import SingleProduct from './pages/SingleProduct';
 import Cart from './pages/Cart';
 import Categories from './components/Categories';
+import Fin from './components/Fin';
 
 function App() {
   const [categories, setCategories] = useState([])
@@ -63,17 +64,16 @@ function App() {
   }
 
   function addAmount(clickedProduct) {
-    const updatedProducts = [...products]
-    const match = updatedProducts.find(match => match.amount === clickedProduct.amount)
-    match.amount++
-    setProducts(updatedProducts)
+    // const updatedProducts = [...products]
+    // const match = updatedProducts.find(match => match.amount === clickedProduct.amount)
+    // match.amount++
+    clickedProduct.amount++
+    setProducts([...products])
   }
 
   function minusAmount(clickedProduct) {
-    const updatedProducts = [...products]
-    const match = updatedProducts.find(match => match.amount === clickedProduct.amount)
-    if (match.amount > 0) { match.amount-- }
-    setProducts(updatedProducts)
+    if (clickedProduct.amount > 0) { clickedProduct.amount-- }
+    setProducts([...products])
   }
 
   return (<div className="App">
@@ -82,10 +82,11 @@ function App() {
       <Route index element={<Navigate replace to='/home' />} />
       <Route path="/home" element={<Categories categories={filteredCategories} getWomanClothes={getWomanClothes} getManClothes={getManClothes} />} />
       <Route path="/woman" element={<Products products={filteredWomanList} setClickedProduct={setClickedProduct} />} />
-      <Route path="/woman/:id" element={<SingleProduct addAmount={addAmount} cartList={cartList} setCartList={setCartList} clickedProduct={clickedProduct} />} />
+      <Route path="/woman/:id" element={<SingleProduct cartList={cartList} setCartList={setCartList} clickedProduct={clickedProduct} />} />
       <Route path="/man" element={<Products products={filteredManList} setClickedProduct={setClickedProduct} />} />
-      <Route path="/man/:id" element={<SingleProduct addAmount={addAmount} cartList={cartList} setCartList={setCartList} clickedProduct={clickedProduct} />} />
+      <Route path="/man/:id" element={<SingleProduct cartList={cartList} setCartList={setCartList} clickedProduct={clickedProduct} />} />
       <Route path="/cart" element={<Cart cartList={cartList} addAmount={addAmount} minusAmount={minusAmount} clickedProduct={clickedProduct} />} />
+      <Route path="/cart/fin" element={<Fin />} />
     </Routes>}
 
   </div>
