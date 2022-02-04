@@ -7,6 +7,7 @@ import SingleProduct from './pages/SingleProduct';
 import Cart from './pages/Cart';
 import Categories from './components/Categories';
 import Fin from './components/Fin';
+import Announcement from './components/Announcement';
 
 function App() {
   const [categories, setCategories] = useState([])
@@ -77,6 +78,9 @@ function App() {
   }
 
   return (<div className="App">
+    <Routes>
+      <Route path="/home" element={<Announcement />} />
+    </Routes>
     <Nav searchValue={searchValue} setSearchValue={setSearchValue} cartList={cartList} />
     {<Routes>
       <Route index element={<Navigate replace to='/home' />} />

@@ -4,6 +4,20 @@
   box-sizing: border-box;
 }
 
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #242325;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #ebebeb;
+  border-radius: 10rem;
+}
+
+
 /* navbar */
 .container{
   height: 60px;
@@ -74,6 +88,17 @@
 
 .bagNumber{
   color: rgb(244 67 54);
+}
+
+.announcement-cont{
+  height: 5vh;
+  background-color: #242325;
+  color: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
 }
 /*  */
 
