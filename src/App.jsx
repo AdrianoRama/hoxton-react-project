@@ -8,6 +8,7 @@ import Cart from './pages/Cart';
 import Categories from './components/Categories';
 import Fin from './components/Fin';
 import Announcement from './components/Announcement';
+import { API } from './config';
 
 function App() {
   const [categories, setCategories] = useState([])
@@ -40,7 +41,7 @@ function App() {
   useEffect(() => { searchClothes() }, [searchValue])
 
   useEffect(() => {
-    fetch(`http://localhost:4000/categories`).then(resp => resp.json())
+    fetch(`${API}/categories`).then(resp => resp.json())
       .then(categoriesFromServer => {
         setCategories(categoriesFromServer),
           setFilteredCategories(categoriesFromServer)
@@ -48,7 +49,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    fetch(`http://localhost:4000/products`).then(resp => resp.json())
+    fetch(`${API}/products`).then(resp => resp.json())
       .then(productsFromServer => setProducts(productsFromServer))
   }, [])
 
